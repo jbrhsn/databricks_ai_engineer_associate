@@ -10,11 +10,11 @@ This is a **Markdown-only learning repository** for the **Databricks Certified G
 - `AGENTS.md` — authoritative authoring rules and Content Depth Rules (Rules 1–9). Read before authoring anything.
 - `templates/` — the ONLY directory populated at scaffold with reusable authoring templates (8 templates + `README.md`). Never edit template originals; copy from them.
 - `01-foundations/` … `08-exam-prep-and-readiness/` — 8 sections mapping to the 6 exam domains + foundations + exam prep.
-- `02-design-applications/` — **now fully authored** (4 chapters, 12 files + section README).
-- `capstone/` — DocuMind LangGraph agent project brief.
-- `00-roadmap/learning-roadmap.md` — 4-week daily study cadence; `progress-tracker.md` — progress log.
+- **Authored so far:** `01-foundations/` (7 chapters, LAB-01), `02-design-applications/` (4 chapters), `03-data-preparation/` (5 chapters, LAB-02–LAB-05), `04-application-development/` (9 chapters, LAB-06–LAB-10), `05-assembling-and-deploying-applications/` (7 chapters, LAB-11–LAB-17). All fully committed.
+- `capstone/` — DocuMind LangGraph agent project brief (still a stub).
+- `progress-tracker.md` — progress log (not updated this session; reflects state through Section 04).
 
-**Architecture:** Sections → objective-cluster modules → chapters. Each chapter folder has `notes.md`, `thought-leadership.md`, `interview-prep.md`; hands-on chapters also have `LAB-XX-*.md`. 42 chapters, 22 labs (LAB-01→LAB-22, global sequence).
+**Architecture:** Sections → objective-cluster modules → chapters. Each chapter folder has `notes.md`, `thought-leadership.md`, `interview-prep.md`; hands-on chapters also have `LAB-XX-*.md`. 42 chapters total, 22 labs (LAB-01→LAB-22, global sequence). **32 chapters authored; 10 remain (Sections 06–08 + capstone).**
 
 **Critical constants (do NOT change):** Filenames/folders are LOCKED after scaffold — renaming breaks forward-links. Lab numbering is global and continuous. Section numbering `01`–`08`. Source of truth: Databricks Exam Guide Mar 2026 PDF; domain weights 14/14/30/22/8/12%.
 
@@ -23,22 +23,23 @@ This is a **Markdown-only learning repository** for the **Databricks Certified G
 ## Session Log
 
 ### Session: 2026-07-11 (current)
-**Files touched:** `02-design-applications/` — 13 files created (4 chapters × 3 files + 1 section README); `01-prompt-and-task-design/01-prompt-formatting-and-output/` (notes.md 456 lines + thought-leadership.md 61 lines + interview-prep.md 185 lines); `01-prompt-and-task-design/02-model-task-selection/` (notes.md 592 lines + thought-leadership.md 92 lines + interview-prep.md 162 lines); `02-chain-and-agent-design/01-chain-components-and-io-specs/` (notes.md 330 lines + thought-leadership.md 70 lines + interview-prep.md 110 lines); `02-chain-and-agent-design/02-tool-ordering-and-agent-bricks/` (notes.md 529 lines + thought-leadership.md 161 lines + interview-prep.md 225 lines); `README.md` (63 lines).
-**Summary:** Executed parallel subagent authoring for Section 02 (Design Applications) across 4 chapters covering prompt formatting, model selection, chain design, and agent tool ordering. Chapters 2–4 (model-task-selection, chain-components, tool-ordering-and-agent-bricks) were completed first via subagents with full quality gates; chapter 1 (prompt-formatting) was completed directly via manual authoring using fetched LangChain docs and official sources. All files wrote to disk; all verified against Content Depth Rules 1–9. Zero stubs/TODOs remain. All external links verified. Fast-evolving features (Agent Bricks, ProviderStrategy/ToolStrategy in structured output, Vector Search drift) flagged with re-verify callouts. Authored section README directly summarizing learning outcomes, module structure, and study tips.
-**Outcome:** Section 02 fully authored and verified. Section 01 + Section 02 are now complete (~40 chapters authored). Sections 03–08 and capstone remain stubs. Nothing has been git-committed this session.
+**Files touched:** `05-assembling-and-deploying-applications/` — all 29 files: 7 chapters × 4 files (notes.md, thought-leadership.md, interview-prep.md, LAB-XX) + section README.md. Chapters: `01-pyfunc-chains-pre-post-processing` (LAB-11), `02-rag-building-blocks-and-signatures` (LAB-12), `01-vector-search-index-and-config` (LAB-13), `02-unity-catalog-registration-serving` (LAB-14), `03-foundation-model-apis-and-ai-query` (LAB-15), `01-mcp-servers-and-persistent-memory` (LAB-16), `02-cicd-prompt-lifecycle-and-uis` (LAB-17).
+**Summary:** Authored all of Section 05 (Assembling & Deploying Applications, 22% exam domain) using 7 parallel subagents — one per chapter, each writing all 4 files. Each subagent passed its own quality gate before writing. Post-authoring mechanical QA verified all 7 notes.md files: `## Key Parameters` standalone = 1/1, `## Worked Example` standalone = 1/1, `<details>` = 5/5, multi-select ≥ 1, STUB/TODO = 0. Total: 7,398 lines inserted across 29 files. Committed as `c6c55d3`.
+**Outcome:** Sections 01–05 fully authored, QA-verified, and committed to `main`. Sections 06–08 and capstone remain single-line stubs. Lab sequence now at LAB-17; next lab is LAB-18.
 
 ### Session: 2026-07-11 (previous)
-**Files touched:** `01-foundations/` — all 23 stubs populated: README.md; module `01-llm-and-nlp-fundamentals` (3 chapters × notes/thought-leadership/interview-prep + `LAB-01-prompt-engineering-fundamentals.md`); module `02-rag-and-retrieval-foundations` (2 chapters × 3 files); module `03-agentic-ai-and-frameworks` (2 chapters × 3 files).
-**Summary:** Executed the `author-chapter` workflow across all of Section 01 (Foundations) using parallel `general` subagents — one per chapter (each producing notes + thought-leadership + interview-prep) plus a dedicated LAB-01 agent. Each subagent did live official-docs research (docs.databricks.com, langchain-ai.github.io, python.langchain.com, mlflow.org), wrote every template section to spec, and self-ran the quality gate. Authored the section README directly. Verified: 0 residual stub/TODO markers, every `notes.md` has exactly 5 self-check questions / 5 `<details>` blocks / ≥1 multi-select. Subagents flagged fast-evolving drift (Vector Search → "AI Search"; FMAPI model list changed, DBRX dropped) with `⚠️` callouts.
-**Outcome:** Section 01 fully authored and verified against the Content Depth Rules. Sections 02–08 and the capstone remain single-line stubs. Nothing has been git-committed this session.
+**Files touched:** `03-data-preparation/` — all 19 content files (5 chapters × notes/TL/ip + LAB-02–LAB-05 + section README); then all 5 notes.md files expanded after QA audit (fixed ELI5 misconceptions, section structure, pitfall labels, diagrams, missing Key Concepts for PII/toxicity/OCR/BM25, converted open-answer Self-Check to MCQ). `04-application-development/` — all 34 files (9 chapters × notes/TL/ip + LAB-06–LAB-10 + section README); structural fix (### → ## promotion for Key Parameters and Worked Example) applied to 6 notes files post-authoring. `progress-tracker.md` updated.
+**Summary:** Authored Section 03 (Data Preparation, 5 chapters) using 5 parallel subagents, then ran a full QA audit and expanded all 5 notes files with targeted fixes. Authored Section 04 (Application Development, 9 chapters — 30% exam domain) using 9 parallel subagents. Applied structural fix (Key Parameters and Worked Example as standalone `##`) to 6 Section 04 files. All committed in 3 git commits.
+**Outcome:** Sections 01–04 fully authored, QA-verified, and committed to `main`. Sections 05–08 and capstone remained single-line stubs at end of session.
 
 ---
 
 ## Open Items / Next Steps
 
-- [ ] Commit Sections 01 + 02 to git with message: `feat: author Sections 01–02 (Foundations + Design Applications; 40 chapters, 120 files, LAB-01)`
-- [ ] Author Section 03 (Data Preparation) — 7 chapters × 3 files + labs + README, all still single-line stubs. Use the same subagent approach.
-- [ ] Update `progress-tracker.md` to mark Sections 01–02 complete and estimate remaining effort.
+- [ ] Author Section 06 (`06-governance/`) — all stubs. Exam domain weight: 8%.
+- [ ] Author Section 07 (`07-evaluation-and-monitoring/`) — all stubs. Exam domain weight: 12%.
+- [ ] Author Section 08 (`08-exam-prep-and-readiness/`) — all stubs. Includes mock exams and readiness checklists.
+- [ ] Populate `capstone/project-brief.md` from `templates/capstone-template.md` — DocuMind LangGraph agent.
 
 ---
 
@@ -48,17 +49,17 @@ This is a **Markdown-only learning repository** for the **Databricks Certified G
 - **Authoring rules:** read `AGENTS.md` (root) first — Content Depth Rules 1–9 govern every notes file.
 - **Templates location:** `templates/` — `chapter-notes-template.md`, `section-index-template.md`, `module-index-template.md`, `authoring-guidelines.md`, `thought-leadership-template.md`, `interview-prep-template.md`, `lab-template.md`, `capstone-template.md`, `README.md`.
 - **Never edit template originals** — copy their content into the target file.
-- **Chapter notes structure (in order):** TL;DR → ELI5 → Learning Objectives → Visual Overview (recommended) → Key Concepts → Key Parameters → Worked Example → Implementation (≥2 snippets, ≥1 anti-pattern) → Common Pitfalls → Key Definitions → Summary → Self-Check (5 Qs, ≥1 multi-select, 5 `<details>`) → Further Reading.
-- **Per-chapter files:** `notes.md`, `thought-leadership.md`, `interview-prep.md` (+ `LAB-XX-*.md` on hands-on chapters).
-- **Authoring workflow that worked:** dispatch one `general` subagent per chapter (all 3 files) + a separate agent per lab, running via parallel tasks; manually author section READMEs directly since they depend on finished chapter content.
-- **Section README:** author directly (not via subagent) since it depends on the finished chapter content; use `templates/section-index-template.md`.
-- **Lab numbering:** global and continuous (LAB-01 → LAB-22). Never reset or renumber.
+- **Chapter notes structure (in order):** TL;DR → ELI5 → Learning Objectives → Visual Overview → Key Concepts → **`## Key Parameters / Configuration Knobs`** → **`## Worked Example: Requirement → Decision`** → Implementation (≥2 snippets, ≥1 anti-pattern) → Common Pitfalls → Key Definitions → Summary → Self-Check (5 Qs, ≥1 multi-select, 5 `<details>`) → Further Reading.
+- **CRITICAL structural rule:** `## Key Parameters` and `## Worked Example` must be standalone `##` sections — never `###` nested inside `## Key Concepts`. Apply the post-authoring check immediately after each batch.
+- **Post-authoring mechanical check (run per notes file):** `grep -c '^## Key Parameters'` = 1; `grep -c '^## Worked Example'` = 1; `grep -c '<details>'` = 5; `grep -c 'Which TWO\|Which THREE'` ≥ 1; `grep -c 'STUB\|TODO'` = 0.
+- **Authoring workflow that worked:** dispatch one `general` subagent per chapter (all 4 files including lab) running in parallel; manually write section READMEs after subagents complete; run mechanical QA batch; commit.
+- **QA workflow (if needed):** dispatch one `general` subagent to read all notes files and produce a gap analysis table, then dispatch one subagent per file to apply targeted fixes in parallel.
+- **Lab numbering:** global and continuous (LAB-01 → LAB-22). Last lab authored: LAB-17. **Next lab to author: LAB-18.**
 - **Filenames are LOCKED** — do not rename/renumber folders or files (breaks forward-links).
 - **External links:** official docs only, format `[Title](url) — *verified YYYY-MM-DD*`, verify with `webfetch` before writing.
-- **Framework priority in content:** LangGraph primary, LangChain component library, CrewAI breadth only; Databricks Agent Framework framework-agnostic.
-- **Flag fast-evolving features** (Agent Bricks, MCP, AI Gateway, MLflow GenAI Scorers, Vector Search/"AI Search", Genie Spaces, FMAPI model list) with a `> ⚠️ Fast-evolving:` note before relying on them.
+- **Framework priority in content:** LangGraph primary, LangChain component library, CrewAI breadth only.
+- **Flag fast-evolving features** (Agent Bricks, MCP, AI Gateway, MLflow GenAI Scorers, Vector Search/"AI Search", Genie Spaces → "Genie Agents" as of July 2026, FMAPI model list, `ResponsesAgent`) with a `> ⚠️ Fast-evolving:` note.
 - **Do not populate stubs without explicit user instruction.**
-- **Git:** repo on branch `main`, remote `origin` = `git@github.com:jbrhsn/databricks_ai_engineer_associate.git`. Scaffold + Sections 01–02 not yet committed.
+- **Git:** branch `main`, remote `origin` = `git@github.com:jbrhsn/databricks_ai_engineer_associate.git`. Latest commit: `c6c55d3 feat: author Section 05`.
 - **Source of truth:** [Exam Guide Mar 2026](https://www.databricks.com/sites/default/files/2026-03/Databricks-Certified-Generative-AI-Engineer-Associate-Exam-Guide-Mar26.pdf); domains 14/14/30/22/8/12%.
-- **Verify after authoring a section:** `grep -rIl 'stub: populate\|TODO' <section>` returns nothing; each `notes.md` has 5 `<details>` and ≥1 "Which TWO/THREE".
-- **Content metrics:** Section 01 = 7 chapters (23 files) + LAB-01 (~1,900 lines notes). Section 02 = 4 chapters (13 files) (~1,907 lines notes). Total authored = 11 chapters + 1 lab, ~3,800 lines across notes files.
+- **Content metrics:** Sections 01–05 complete. Section 05 = 7 chapters + LAB-11–17. Total: 32 chapters, ~22,000+ lines of notes content, 10 chapters remaining (Sections 06–08 + capstone).
