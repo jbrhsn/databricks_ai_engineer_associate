@@ -1,95 +1,215 @@
-<!--
-TEMPLATE: chapter-notes-template.md
-Copy this file to `notes.md` inside a chapter folder and fill it in.
-Delete these HTML comments once populated. See templates/authoring-guidelines.md
-for depth/proportion guidance before you start writing.
--->
-
 # [Chapter Title]
 
-**Section:** [Section Name] | **Module:** [Module Name] | **Est. time:** [X hrs]
-**Exam mapping:** [Which exam section/objective this chapter supports, or "N/A" if not exam-relevant]
+**Section:** [Section] | **Module:** [Module] | **Est. time:** [X hrs] | **Exam mapping:** [Domain/objective or "Supporting content"]
+
+---
+
+## TL;DR
+
+<!-- 2–4 sentences. What this topic is, why it matters, and the single most important thing to remember.
+     End with: **The one thing to remember: ...** -->
+
+---
+
+## ELI5 — Explain It Like I'm 5
+
+<!-- Mandatory. 3–6 sentences of plain English using a concrete everyday analogy.
+     The analogy must map structurally onto the technical concept — not just vaguely compare.
+     No jargon in this section. Prose only, no bullets.
+     Non-compliant: "Think of X as a way to represent Y." (too vague)
+     Compliant: name a familiar object, map its mechanism to the technical process,
+     and explicitly correct the most common misconception. -->
+
+---
 
 ## Learning Objectives
 
-By the end of this chapter, you will be able to:
+By the end of this chapter you will be able to:
+- [ ] [Action-verb outcome — specific and testable, e.g. "Configure X to achieve Y"]
+- [ ] [Outcome 2]
+- [ ] [Outcome 3–5 total — use verbs: implement, diagnose, compare, explain, design]
 
-- [Concrete outcome 1 — use an action verb: explain, implement, compare, debug, configure]
-- [Concrete outcome 2]
-- [Concrete outcome 3]
-- [Outcome 4 — optional]
-- [Outcome 5 — optional]
+---
 
-## Core Concepts
+## Visual Overview
 
-<!--
-This is the teaching heart of the chapter — budget ~80% of authoring effort here.
-Explain foundational ideas, definitions, and mental models. Assume the reader has
-the chapter's prerequisites but no domain context for THIS topic yet.
-Use analogies where they genuinely clarify, not as decoration.
--->
+<!-- Recommended. Include when the topic has a visualisable process, architecture, or decision flow.
+     Aim for 2–4 diagrams. Place each under its own ### sub-header inside a plain fenced code block
+     (no language tag). Use box-drawing characters for structure:
+       Flows (left-to-right):  ──►   Vertical:  │  ├  └
+       Corners:  ┌ ┐ ┘ └       Labels: ▲ ▼ ◄ ►
+     Good diagram types:
+       - Pipeline / data flow  (e.g. Input ──► Process ──► Output)
+       - Decision tree         (branch on a key condition)
+       - Architecture comparison (side-by-side option A vs option B)
+       - Before / after        (anti-pattern state vs correct state)
+     If the topic is purely conceptual with nothing to visualise, omit this section. -->
 
-[Explain the foundational ideas here.]
+### [Diagram Title — e.g. "Pipeline Flow"]
 
-## Deep Dive / Advanced Topics
+```
+[left-to-right or top-to-bottom diagram here]
+Input ──► Step 1 ──► Step 2 ──► Output
+```
 
-<!--
-~15% of effort. This is where intermediate understanding becomes expert understanding.
-Cover mechanics, nuance, edge cases, and "why it works this way" — not just "what it is."
-If this section is thin, the chapter is probably still at intro level.
--->
+### [Diagram Title — e.g. "Decision Tree"]
 
-[Go deeper here.]
+```
+Is condition X true?
+├── Yes ──► Approach A
+└── No  ──► Is condition Y true?
+            ├── Yes ──► Approach B
+            └── No  ──► Approach C
+```
 
-## Worked Examples & Practice
+---
 
-<!--
-~5% of effort, but non-negotiable: at least one end-to-end, realistic worked example.
-Prefer a real scenario over a toy problem. Show failure modes where relevant —
-what happens when this is done wrong is often more instructive than the happy path.
--->
+## Key Concepts
 
-[Insert worked example(s) with full walkthroughs/solutions.]
+<!-- For EACH concept sub-section, answer all three questions:
+     1. What is it? (1–2 sentence definition)
+     2. How does it work mechanistically? (2–4 sentences on the process/behaviour that produces the result)
+     3. Where does it appear in the tool/platform ecosystem? (command, API call, config field, UI location)
+     A sub-section that only answers question 1 is non-compliant. -->
+
+### [Concept A]
+
+### [Concept B]
+
+### [Concept C]
+
+### Key Parameters / Configuration Knobs
+
+<!-- Required for any chapter covering a configurable component.
+     "Decision rule" must be a concrete actionable rule, not a restatement of the parameter.
+     If no configurable parameters exist for this topic, write: "No configurable parameters for this topic." -->
+
+| Parameter | What it controls | Decision rule |
+|---|---|---|
+| [param] | [what it does] | [when to set it to X vs Y] |
+
+### Worked Example: Requirement → Decision
+
+<!-- Mandatory. Walk through one complete, realistic decomposition.
+     Given: [plain-English scenario — not "Example: configure X"]
+     Step 1 — Identify the goal: [what outcome is needed]
+     Step 2 — Define inputs: [what data/config/context enters]
+     Step 3 — Define outputs: [what the downstream step expects]
+     Step 4 — Apply constraints: [constraints relevant to this domain and topic]
+     Step 5 — Select the approach: [specific tool/command/pattern + one-sentence rationale vs alternatives]
+     If no selection decision exists, substitute a realistic failure diagnosis walkthrough. -->
+
+---
+
+## Implementation
+
+<!-- At least 2 code or config snippets from different angles.
+     Every snippet starts with a comment naming the business/operational problem it solves.
+     At least one snippet must be an anti-pattern, labeled # Anti-pattern: or # Wrong:,
+     immediately followed by the corrected version with an explanation of what breaks. -->
+
+```[language]
+# Scenario: [the real-world problem this solves]
+
+```
+
+```[language]
+# Anti-pattern: [describe the wrong approach and why it fails]
+
+# Correct approach:
+
+```
+
+---
 
 ## Common Pitfalls & Misconceptions
 
-<!--
-Name the specific things learners get wrong on THIS topic. Generic warnings
-("be careful with edge cases") don't count — be concrete.
--->
+<!-- Each bullet: (1) bolded label, (2) why beginners make this mistake, (3) correct mental model.
+     Bare bullets with no explanation are non-compliant. -->
 
-- **Pitfall:** [What people get wrong] → **Why it happens:** [Root cause] → **Fix:** [Correct approach]
-- **Pitfall:** ...
+- **[Pitfall label]** — [Why the wrong intuition forms]. [Correct mental model].
+- **[Pitfall label]** — [Why the wrong intuition forms]. [Correct mental model].
+- **[Pitfall label]** — [Why the wrong intuition forms]. [Correct mental model].
+
+---
 
 ## Key Definitions
 
 | Term | Definition |
 |---|---|
-| [Term 1] | [Precise, accurate definition] |
-| [Term 2] | [Precise, accurate definition] |
+| [Term] | [Precise, scoped definition — not a dictionary entry] |
+
+---
 
 ## Summary / Quick Recall
 
-<!-- Scannable bullets for pre-exam review. If someone reads only this section
-the night before the exam, what MUST they retain? -->
+- [Key takeaway 1 — one line, scannable]
+- [Key takeaway 2]
+- [3–7 takeaways total — designed for a 60-second pre-exam scan]
 
-- [Key point 1]
-- [Key point 2]
-- [Key point 3]
+---
 
 ## Self-Check Questions
 
-<!-- Must be answerable ONLY after working through this chapter — not Googleable
-recall questions. Include brief (1-2 sentence) answers. -->
+<!-- 5 questions. Cognitive level distribution:
+     Q1: recall (definition or fact)
+     Q2–Q3: application (apply concept to a new scenario)
+     Q4–Q5: analysis or trade-off (compare options, select best under constraints)
+     At least 1 must be multi-select ("Which TWO...").
+     Every answer: explain why correct AND why main distractor(s) are wrong.
+     One-word answers are non-compliant. -->
 
-1. [Question] — *Answer:* [1–2 sentence answer]
-2. [Question] — *Answer:* [1–2 sentence answer]
-3. [Question] — *Answer:* [1–2 sentence answer]
-4. [Question] — *Answer:* [1–2 sentence answer]
-5. [Question] — *Answer:* [1–2 sentence answer]
+1. [Recall question]
+
+   <details><summary>Answer</summary>
+
+   [Why this is the correct answer. Why the most tempting wrong answer fails.]
+
+   </details>
+
+2. [Application question]
+
+   <details><summary>Answer</summary>
+
+   [Answer with rationale.]
+
+   </details>
+
+3. **Which TWO** [multi-select question]
+   - A.
+   - B.
+   - C.
+   - D.
+   - E.
+
+   <details><summary>Answer</summary>
+
+   [Why both correct answers qualify. Why the most tempting wrong answer fails.]
+
+   </details>
+
+4. [Analysis question]
+
+   <details><summary>Answer</summary>
+
+   [Answer with rationale.]
+
+   </details>
+
+5. [Trade-off question]
+
+   <details><summary>Answer</summary>
+
+   [Answer with rationale.]
+
+   </details>
+
+---
 
 ## Further Reading
 
-- [Official documentation link — title and URL]
-- [Canonical resource 2]
-- [Canonical resource 3, optional]
+<!-- Official documentation only. No third-party blogs, Medium, or YouTube.
+     Format: [Title](url) — *verified YYYY-MM-DD* — [one-line description]
+     Verify every URL with webfetch before writing. -->
+
+- [Title](url) — *verified YYYY-MM-DD* — [description]
